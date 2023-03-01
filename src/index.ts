@@ -1,16 +1,7 @@
 import { addBtn, addXIconToTodos, makeTodosCheckable, startingTodos, todoInput, todoList, xIconText } from "./dom-utils";
 
-addBtn.onclick = () => addNewTodo();
-
-// Create a "close" button and append it to each list item
-
-for(let liTag of startingTodos){
-  const span = document.createElement("SPAN");
-  const txt = document.createTextNode(xIconText);
-  span.className = "close";
-  span.appendChild(txt);
-  liTag.appendChild(span);
-}
+// add following line as bonus at the end
+window.addEventListener('keydown',(e: KeyboardEvent)=> e.key === 'Enter' && todoInput === document.activeElement && addNewTodo()); // add as bonus at the end
 
 // Create a new list item when clicking on the "Add" button
 function addNewTodo() {
@@ -26,7 +17,7 @@ function addNewTodo() {
   todoInput.value = "";
 
   const span = document.createElement("SPAN");
-  span.className = "close";
+  span.className = "close"; // needed for the queryselector
   span.innerText = (xIconText); // represents the x
   li.appendChild(span); // adds the x to the todo-item
 
@@ -37,5 +28,6 @@ function addNewTodo() {
 function initTodoList(){
   addXIconToTodos();
   makeTodosCheckable();
+  addBtn.onclick = () => addNewTodo();
 }
 initTodoList(); // initializes the App
