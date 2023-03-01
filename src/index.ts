@@ -1,9 +1,6 @@
 import { growthrate, start, days, updateDaysView } from "./dom-utils";
 import { calculateRate } from "./formula";
 
-
-
-
 function startCalculator(){
 // add initial Values
 growthrate.value = "1.1";
