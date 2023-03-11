@@ -1,8 +1,4 @@
 import { addBtn, addXIconToTodos, makeTodosCheckable, startingTodos, todoInput, todoList, xIconText } from "./dom-utils";
-
-// add following line as bonus at the end
-window.addEventListener('keydown',(e: KeyboardEvent)=> e.key === 'Enter' && todoInput === document.activeElement && addNewTodo()); // add as bonus at the end
-
 // Create a new list item when clicking on the "Add" button
 function addNewTodo() {
   const li = document.createElement("li");
@@ -31,3 +27,6 @@ function initTodoList(){
   addBtn.onclick = () => addNewTodo();
 }
 initTodoList(); // initializes the App
+
+// add following line as bonus at the end
+window.addEventListener('keydown',(e: KeyboardEvent)=> e.key === 'Enter' && todoInput === document.activeElement && addNewTodo()); // add as bonus at the end
