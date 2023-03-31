@@ -1,24 +1,30 @@
-//THIS IS THE ENTRY FILE - WRITE YOUR MAIN LOGIC HERE!
+import {
+  addInputListeners,
+  days,
+  growthrate,
+  result,
+  start,
+} from "./dom-utils";
 
-import { helloWorld, Beispiel } from "./myModule";
-import { alertMe } from "./myOtherModule";
+growthrate.value = "1.1";
+start.value = "1";
+days.value = "1";
 
-console.log(helloWorld);
-customElements.define("my-beispiel", Beispiel);
+const daysView = document.querySelector("#daysView");
 
-alertMe();
-
-const myInputValue = document.querySelector<HTMLInputElement>("#myInput");
-
-const myInputValueAlternate = document.querySelector(
-  "#myInput"
-) as HTMLInputElement;
-
-document
-  .querySelector<HTMLInputElement>("#myInput")
-  ?.addEventListener("focus", doSmth);
-
-function doSmth(e: UIEvent) {
-  const val = e.target as HTMLInputElement;
-  console.log(e, val.value);
+function updateDaysView() {
+  daysView!.innerHTML = days.value;
 }
+function calculateRate() {
+  const rate = Math.floor(
+    +start.value * Math.pow(+growthrate.value, +days.value)
+  );
+  result.innerHTML = `${rate}`;
+}
+
+function initApp() {
+  addInputListeners();
+  calculateRate();
+}
+
+initApp();
