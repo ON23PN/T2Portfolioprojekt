@@ -16,6 +16,3 @@ function initApp() {
   calculateRate();
 }
 initApp();
-function updateDaysView(this: HTMLInputElement, ev: Event) {
-  throw new Error("Function not implemented.");
-}
