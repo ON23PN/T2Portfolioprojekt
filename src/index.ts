@@ -6,7 +6,6 @@ function initApp() {
   newTodoBtn.disabled = true;
   newTodoBtn.addEventListener("click", addTodo);
   newTodoInput.addEventListener("input", validateInput);
-  newTodoInput.addEventListener("input", validateInput);
 }
 
 initApp();

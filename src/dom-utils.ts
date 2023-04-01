@@ -1,14 +1,22 @@
-import { calculateRate } from "./formula";
-const days = document.querySelector("#days") as HTMLInputElement;
-const growthrate = document.querySelector("#growthrate") as HTMLInputElement;
-const start = document.querySelector("#start") as HTMLInputElement;
-const result = document.querySelector("#result") as HTMLSpanElement;
-const daysView = document.querySelector("#daysView");
+const newTodoInput = document.querySelector(
+  "#newTodoInput"
+) as HTMLInputElement;
+const newTodoBtn = document.querySelector("#newTodoBtn") as HTMLButtonElement;
+const validatorMessage = document.querySelector(
+  "#validatorMessage"
+) as HTMLSpanElement;
+const todosContainer = document.querySelector(
+  "#todosContainer"
+) as HTMLDivElement;
+//Util functions
 
-days.addEventListener("input", updateDaysView);
-
-function updateDaysView() {
-  daysView!.innerHTML = days.value;
+function setValidatorMesssage(msg: string, error = false) {
+  validatorMessage.innerHTML = msg;
+  if (error) {
+    validatorMessage.style.color = "red";
+  } else {
+    validatorMessage.style.color = "initial";
+  }
 }
 
-export { days, growthrate, start, result };
+export { newTodoInput, newTodoBtn, todosContainer, setValidatorMesssage };
