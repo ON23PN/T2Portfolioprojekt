@@ -1,18 +1,12 @@
-import { days, growthrate, start } from "./dom-utils";
-import { calculateRate } from "./formula";
-
-growthrate.value = "1.1";
-start.value = "1";
-days.value = "1";
-
-function addInputListeners() {
-  days.addEventListener("input", calculateRate);
-  growthrate.addEventListener("input", calculateRate);
-  start.addEventListener("input", calculateRate);
-}
+import { addTodo } from "./assets/todos";
+import { newTodoBtn, newTodoInput } from "./dom-utils";
+import { validateInput } from "./validator";
 
 function initApp() {
-  addInputListeners();
-  calculateRate();
+  newTodoBtn.disabled = true;
+  newTodoBtn.addEventListener("click", addTodo);
+  newTodoInput.addEventListener("input", validateInput);
+  newTodoInput.addEventListener("input", validateInput);
 }
+
 initApp();
