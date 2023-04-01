@@ -44,6 +44,8 @@ function reloadTodos() {
     singleTodoContainer.appendChild(deleteBtn);
     //append it to the wrapper
     todosContainer.appendChild(singleTodoContainer);
+    //separator between each item
+    todosContainer.appendChild(document.createElement("hr"));
   });
 }
 
