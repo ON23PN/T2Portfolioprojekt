@@ -1,6 +1,6 @@
-import { newTodoInput, todosContainer } from "../dom-utils";
-import { Todo } from "../types/interfaces";
-import { validateInput } from "../validator";
+import { newTodoInput, todosContainer } from "./dom-utils";
+import { Todo } from "./types/interfaces";
+import { validateInput } from "./validator";
 
 let todos: Todo[] = [];
 
@@ -11,6 +11,7 @@ function addTodo() {
 
   const newTodo: Todo = {
     description: newTodoInput.value,
+    // generate a new id in the format UNIXTIMESTAMP-rn-999
     id: `${Date.now()}-rn-${Math.floor(Math.random() * 999)}`,
     finished: false,
   };
@@ -19,6 +20,7 @@ function addTodo() {
 }
 
 function deleteTodo(id: string) {
+  // let all todos pass except the one with the id that will be deleted
   todos = todos.filter((todo: Todo) => todo.id !== id);
   reloadTodos();
 }

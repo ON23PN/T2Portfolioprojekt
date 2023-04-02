@@ -1,4 +1,4 @@
-import { addTodo } from "./assets/todos";
+import { addTodo } from "./todos";
 import { newTodoBtn, newTodoInput } from "./dom-utils";
 import { validateInput } from "./validator";
 
