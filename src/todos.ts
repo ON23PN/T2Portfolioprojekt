@@ -50,10 +50,9 @@ function reloadTodos() {
     .forEach((todo) => {
       //create container for todo
       const singleTodoContainer = document.createElement("div");
+      singleTodoContainer.id = todo.id;
       singleTodoContainer.innerHTML = `
-    <p id="${todo.id}" style="${
-        todo.finished && "text-decoration: line-through;"
-      }">
+    <p style="${todo.finished && "text-decoration: line-through;"}">
     ${todo.description}</p>
     `;
 
