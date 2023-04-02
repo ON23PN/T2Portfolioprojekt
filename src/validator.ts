@@ -24,9 +24,9 @@ function setValidatorMesssage(msg: string, error = false) {
   }
 }
 
-enum ValidatorMessages {
-  INPUT_EMTPY = "You must type something!",
-  INPUT_VALID = "Great, Press the Button or 'Enter' to add",
-}
+const ValidatorMessages = {
+  INPUT_EMTPY: "You must type something!",
+  INPUT_VALID: "Great, Press the Button or 'Enter' to add",
+};
 
 export { validateInput };
