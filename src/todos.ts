@@ -5,7 +5,7 @@ import { validateInput } from "./validator";
 let todos: Todo[] = [];
 
 function addTodo() {
-  if (!validateInput) {
+  if (!validateInput()) {
     return; // if input is not valid, we wont add a new todo by returning here
   }
 
@@ -25,25 +25,48 @@ function deleteTodo(id: string) {
   reloadTodos();
 }
 
+function toggleFinishedState(id: string) {
+  todos = todos.map((todoEntry) => {
+    if (todoEntry.id === id) {
+      todoEntry.finished = !todoEntry.finished; // toggle finished State
+    }
+    return todoEntry;
+  });
+  reloadTodos();
+}
+
 function reloadTodos() {
   //empty the todos list
   todosContainer.innerHTML = "";
   // Iterate through Todos to refresh HTML
   todos.forEach((todo) => {
+    //create container for todo
+    const singleTodoContainer = document.createElement("div");
+    singleTodoContainer.innerHTML = `
+    <p id="${todo.id}" style="${
+      todo.finished && "text-decoration: line-through;"
+    }">
+    ${todo.description}</p>
+    `;
+
     //create Delete Button
     const deleteBtn = document.createElement("button");
     deleteBtn.addEventListener("click", () => deleteTodo(todo.id));
     deleteBtn.style.backgroundColor = "red";
     deleteBtn.innerHTML = "X";
 
-    //create container for todo
-    const singleTodoContainer = document.createElement("div");
-    singleTodoContainer.innerHTML = `
-    <p id="${todo.id}">
-    ${todo.description}</p>
-    `;
+    //create finished Button
+    const finishedBtn = document.createElement("button");
+    finishedBtn.addEventListener("click", () => toggleFinishedState(todo.id));
+    if (todo.finished) {
+      finishedBtn.innerHTML = "set unifinished";
+    } else {
+      finishedBtn.innerHTML = "set finished";
+    }
+
     //get the delete btn in
     singleTodoContainer.appendChild(deleteBtn);
+    singleTodoContainer.appendChild(finishedBtn);
     //append it to the wrapper
     todosContainer.appendChild(singleTodoContainer);
     //separator between each item

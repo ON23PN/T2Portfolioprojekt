@@ -6,6 +6,13 @@ function initApp() {
   newTodoBtn.disabled = true;
   newTodoBtn.addEventListener("click", addTodo);
   newTodoInput.addEventListener("input", validateInput);
+  newTodoInput.addEventListener("keydown", hasPressedEnterKeyOnTodoInput);
 }
 
-initApp();
+function hasPressedEnterKeyOnTodoInput(e: KeyboardEvent) {
+  if (e.key === "Enter") {
+    addTodo(); // try to add a todo by pressing the enter key on the keyboard
+  }
+}
+
+initApp(); // init everything
