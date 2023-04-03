@@ -1,0 +1,4 @@
+- Füge dem todo ein neues **optionales** property "text hinzu"
+- über eine textarea-Feld sonn eine längere Beschreibung eingegeben werden können.
+- Gebe diese im Frontend der description als Paragraph aus, aber mit einem kleineren Text (z.b über small Tag)
+- Die Textarea soll sich automatisch leeren, sobald ein neues Todo hinzugefügt wird

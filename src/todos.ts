@@ -1,4 +1,4 @@
-import { newTodoInput, todosContainer } from "./dom-utils";
+import { newTodoInput, newTodoTextarea, todosContainer } from "./dom-utils";
 import { Todo } from "./types/interfaces";
 import { validateInput } from "./validator";
 
@@ -11,6 +11,7 @@ function addTodo() {
   const timestamp = new Date();
   const newTodo: Todo = {
     description: newTodoInput.value,
+    text: newTodoTextarea.value,
     // generate a new id in the format UNIXTIMESTAMP-rn-999
     id: `${timestamp.getTime()}-rn-${Math.floor(Math.random() * 999)}`,
     finished: false,
@@ -20,6 +21,7 @@ function addTodo() {
   reloadTodos();
   //empty input
   newTodoInput.value = "";
+  newTodoTextarea.value = "";
 }
 
 function deleteTodo(id: string) {
@@ -54,6 +56,7 @@ function reloadTodos() {
       singleTodoContainer.innerHTML = `
     <p style="${todo.finished && "text-decoration: line-through;"}">
     ${todo.description}</p>
+    <p><small>${todo.text}</small></p>
     `;
 
       //create Delete Button
