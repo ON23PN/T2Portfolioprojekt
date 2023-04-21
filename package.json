@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "@rollup/plugin-typescript": "^8.5.0",
-    "chart.js": "^4.2",
     "live-server": "^1.2.2",
     "rollup": "^2.70.1",
     "tslib": "^2.3.1",

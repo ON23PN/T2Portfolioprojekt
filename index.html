@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script defer src="./build/bundle.js"></script>
+    <link rel="stylesheet" href="assets/simple.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-    <my-beispiel></my-beispiel>
-    <input type="text" id="myInput" />
+    <header>
+        <h1>Meine Rechnungs-App</h1>
+    </header>
+    <main>
+        <div class="inputs">
+            <p>Eintrag hinzufügen</p>
+            <input type="text" id="beschreibung">
+            <input type="number" id="betrag">
+            <button id="addBtn">betrag hinzufügen</button>
+        </div>
+        <ol id="rechnungContainer">
+        </ol>
+        <h3>Gesamtbetrag: <span id="rechnungGesamtbetrag"></span></h3>
+    </main>
 </body>
 
 </html>
