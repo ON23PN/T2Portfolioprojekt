@@ -3,14 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!--ACHTUNG - DAS GEHT NUR WEGEN VITE! IN "ECHT" KANN KEIN TS IM BROWSER AUSGEFÜHRT WERDEN -->
+    <title>Ernährungstracker</title>
     <script defer type="module" src="/src/index.ts"></script>
   </head>
-
   <body>
-    <img class="small-image" src="/jslogo.png" alt="JavaScript Logo" />
-    <label for="myInput">Type something:</label>
-    <input name="myInput" type="text" id="myInput" />
+    <img> 
+    <img src="logo.png" alt="Logo" id="logo">
+ 
+    <div>
+      <label for="lebensmittel">Wähle ein Lebensmittel:</label>
+      <select id="lebensmittel">
+        <option value="apfel">Apfel</option>
+        <option value="banane">Banane</option>
+        <option value="hühnchen">Hühnchen</option>
+      </select><br>
+      <label for="anzahl">Menge (gramm):</label>
+      <input type="number" id="anzahl" min="0" step="1">
+      <br><button id="berechnenBtn">Werte berechnen</button>
+    </div>
+    <div id="ergebnis">
+      <!-- Result will be displayed here -->
+    </div>
   </body>
 </html>
