@@ -7,22 +7,50 @@
     <script defer type="module" src="/src/index.ts"></script>
   </head>
   <body>
-    <img> 
-    <img src="logo.png" alt="Logo" id="logo">
- 
     <div>
-      <label for="lebensmittel">Wähle ein Lebensmittel:</label>
-      <select id="lebensmittel">
-        <option value="apfel">Apfel</option>
-        <option value="banane">Banane</option>
-        <option value="hühnchen">Hühnchen</option>
-      </select><br>
-      <label for="anzahl">Menge (gramm):</label>
-      <input type="number" id="anzahl" min="0" step="1">
-      <br><button id="berechnenBtn">Werte berechnen</button>
+      <img src="logo.png" alt="Logo" id="logo">
+    </div><br>
+    <div class="function-cards-container">
+      <div class="function-card">
+          <h2>Lebensmittel wählen und berechnen</h2>
+          <label for="lebensmittel">Wähle ein Lebensmittel:</label>
+          <select id="lebensmittel">
+              <option value="apfel">Apfel</option>
+              <option value="banane">Banane</option>
+              <option value="hühnchen">Hühnchen</option>
+          </select>
+          <br>
+          <label for="anzahl">Menge (gramm):</label>
+          <input type="number" id="anzahl" min="0" step="1">
+          <br>
+          <button id="berechnenBtn">Werte berechnen</button>
+      </div>
+
+    <div class="function-card">
+        <h2>Benutzerdefinierte Zutat hinzufügen</h2>
+        <label for="benutzerZutat">Zutat:</label>
+        <input type="text" id="benutzerZutat">
+        <label for="benutzerKalorien">Kalorien pro 100g:</label>
+        <input type="number" id="benutzerKalorien" min="0" step="0.01">
+        <label for="benutzerProteine">Proteine pro 100g:</label>
+        <input type="number" id="benutzerProteine" min="0" step="0.01">
+        <label for="benutzerFett">Fett pro 100g:</label>
+        <input type="number" id="benutzerFett" min="0" step="0.01"><br>
+        <button id="benutzerZutatSpeichernBtn">Zutat speichern</button>
+     </div>
+
+    <div class="function-card">
+        <h2>Mahlzeit speichern</h2>
+        <label for="mahlzeitName">Name der Mahlzeit:</label>
+        <input type="text" id="mahlzeitName"><br>
+        <button id="mahlzeitSpeichernBtn">Mahlzeit speichern</button>
     </div>
-    <div id="ergebnis">
-      <!-- Result will be displayed here -->
+
+    <div class="function-card">
+        <h2>Kalorienziel-Tracking</h2>
+        <label for="kalorienziel">Tägliches Kalorienziel:</label>
+        <input type="number" id="kalorienziel" min="0" step="1">
+        <div id="verbleibendeKalorien">Verbleibende Kalorien:</div>
     </div>
-  </body>
+</body>
 </html>

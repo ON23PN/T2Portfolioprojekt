@@ -60,3 +60,37 @@ function berechnen() {
         <p>Fett: ${fett.toFixed(2)}g</p>
     `;
 }
+
+// Benutzerdefinierte Zutaten hinzufügen
+const benutzerZutatInput = document.getElementById("benutzerZutat") as HTMLInputElement;
+const benutzerKalorienInput = document.getElementById("benutzerKalorien") as HTMLInputElement;
+const benutzerProteineInput = document.getElementById("benutzerProteine") as HTMLInputElement;
+const benutzerFettInput = document.getElementById("benutzerFett") as HTMLInputElement;
+
+// Gespeicherte Mahlzeiten
+const mahlzeitNameInput = document.getElementById("mahlzeitName") as HTMLInputElement;
+const mahlzeitSpeichernBtn = document.getElementById("mahlzeitSpeichernBtn");
+
+// Kalorienziel-Tracking
+const kalorienzielInput = document.getElementById("kalorienziel") as HTMLInputElement;
+const verbleibendeKalorienDiv = document.getElementById("verbleibendeKalorien");
+
+// Berechnung der verbleibenden Kalorien
+function updateVerbleibendeKalorien(): void {
+    const kalorienziel: number = parseFloat(kalorienzielInput.value);
+    const summeKalorien: number = 0; // Berechnet die Summe der Kalorien der ausgewählten Lebensmittel;
+    const verbleibendeKalorien: number = kalorienziel - summeKalorien;
+    if (verbleibendeKalorienDiv) {
+        verbleibendeKalorienDiv.innerText = `Verbleibende Kalorien: ${verbleibendeKalorien.toFixed(2)}`;
+    }
+}
+
+// Event-Listener für den Button zum Speichern der Mahlzeit
+if (mahlzeitSpeichernBtn) {
+    mahlzeitSpeichernBtn.addEventListener("click", (): void => {
+        const mahlzeitName: string = mahlzeitNameInput.value;
+    });
+}
+
+// Event-Listener für die Änderung des Kalorienziels
+kalorienzielInput.addEventListener("input", updateVerbleibendeKalorien);
