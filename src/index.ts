@@ -1,11 +1,6 @@
 import './styles/styles.css';
+import { Lebensmittel } from './types';
 
-interface Lebensmittel {
-    name: string;
-    kalorienPro100Gramm: number;
-    proteinePro100Gramm: number;
-    fettPro100Gramm: number;
-}
 
 //Lebensmittel Datenbank
 let lebensmittel: { [key: string]: Lebensmittel } = {
