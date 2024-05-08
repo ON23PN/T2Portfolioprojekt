@@ -1,4 +1,103 @@
-.small-image{
-    width: 100px;
-    height: 100px;
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+
+header {
+    text-align: center;
+}
+
+#banner {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+#logo {
+    width: 250px;
+    height: auto;
+    margin: 0 auto 20px;
+    padding-top: 20px;
+}
+
+.welcome-section {
+    margin: 0 auto 50px;
+    text-align: left;
+    color: #5C4738;
+    max-width: 800px;
+    line-height: 2;
+}
+
+.function-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.function-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #E7E3E1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.function-card h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+    line-height: 2;
+}
+
+.function-card label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.function-card input[type="text"], .function-card input[type="number"], .function-card button {
+    margin-bottom: 10px;
+}
+
+.function-card table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.function-card th, .function-card td {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+.function-card th {
+    background-color: #f2f2f2;
+}
+
+#berechneteTabelle {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#berechneteTabelle th, #berechneteTabelle td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+#berechneteTabelle th {
+    background-color: #f2f2f2;
 }
