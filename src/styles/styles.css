@@ -1,8 +1,13 @@
 * {
-    font-family:'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+p {
+    margin-top: 20px;
+    margin-bottom: 20px; 
 }
 
 
@@ -11,8 +16,8 @@ header {
 }
 
 #banner {
-    width:100%;
-    height:fit-content;
+    width: 100%;
+    height: fit-content;
     padding-bottom: 20px;
 }
 
@@ -31,36 +36,13 @@ header {
     line-height: 2;
 }
 
-p{
-    line-height: 1.5;
-}
-
-li{
-    text-align: left;
-}
-
-ul{
-    padding: 20px;
-}
-
-.features{
-    padding-top: 30px;
-}
-
-h1{
-    font-size: large;
-    font-weight:bolder;
-    padding-bottom: 10px;
-}
-
 .function-cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
     gap: 20px;
-    padding: 0 20px; 
+    padding: 0 20px;
 }
-
 
 .function-card {
     border: 1px solid #ccc;
@@ -69,8 +51,7 @@ h1{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     background-color: #E7E3E1;
     text-align: center;
-    margin-bottom: 20px; 
-    position: relative; 
+    margin-bottom: 20px;
 }
 
 .function-card h2 {
@@ -85,21 +66,17 @@ h1{
     margin-bottom: 5px;
 }
 
-.function-card input[type="text"],
-.function-card input[type="number"],
-.function-card button {
+.function-card input[type="text"], .function-card input[type="number"], .function-card button {
     margin-bottom: 10px;
 }
 
 .function-card table {
-    width: 100%; 
-    margin-top: 10px; 
-    border-collapse: collapse; 
-    display: block; 
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
 }
 
-.function-card th,
-.function-card td {
+.function-card th, .function-card td {
     padding: 8px;
     border: 1px solid #dddddd;
     text-align: left;
@@ -109,18 +86,10 @@ h1{
     background-color: #f2f2f2;
 }
 
-
-.function-card input[type="text"],
-.function-card input[type="number"],
-.function-card button {
-    margin-bottom: 10px;
-}
-
-
 #berechneteTabelle {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 #berechneteTabelle th, #berechneteTabelle td {
