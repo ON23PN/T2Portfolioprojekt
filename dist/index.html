@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ernährungstracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  <script type="module" crossorigin src="/assets/index-BnAOkFeH.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CL8BCULC.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div>
+            <img src="/assets/logo-3ew9Awz3.png" alt="Logo" id="logo">
+        </div>
+    </header>
+    <img src="/assets/banner1-Begt2bgl.png" alt="Nahrungsmittel" id="banner">
+    <div class="welcome-section">
+        <h4 class="intro">Herzlich Willkommen beim Ernährungstracker!</h4>
+        <p class="intro">Es freut uns, dass Sie sich für eine gesündere Lebensweise entschieden haben und wir Sie auf Ihrer Reise zu einer ausgewogenen Ernährung unterstützen dürfen.</p>
+        <div class="features">
+            <p><b>Unser Ernährungstracker bietet Ihnen eine Vielzahl nützlicher Funktionen, um Ihre Ernährung zu optimieren:</b></p>
+            <ul>
+                <li>Setzen Sie sich tägliche Ziele für Kalorien, Proteine und Fette und verfolgen Sie Ihren Fortschritt.</li>
+                <li>Sie können aus einer umfangreichen Datenbank von Lebensmitteln auswählen und deren Kalorien, Proteine und Fette berechnen.</li>
+                <li>Wenn Sie ein Lebensmittel in unserer Datenbank nicht finden, können Sie es einfach selbst hinzufügen.</li>
+                <li>Unsere Website berechnet automatisch die Kalorien, Proteine und Fette für jedes Lebensmittel, das Sie hinzufügen, und zeigt Ihnen an, wie viel Sie bereits verbraucht haben und wie viel Ihnen noch bleibt, um Ihre Ziele zu erreichen.</li>
+            </ul>
+            <p>Wir laden Sie ein, diese Funktionen zu entdecken und mit unserem Ernährungstracker Ihren Weg zu einem gesünderen Lebensstil zu beginnen!</p>
+        </div>
+    </div>
+    <!--Ziel-Tracker Karten-->
+    <div class="function-cards-container">
+        <div class="function-card">
+            <h2>Kalorienziel-Tracking</h2>
+            <div id="kalorienzielDiv">
+                <label for="kalorienziel">Tägliches Kalorienziel:</label>
+                <input type="number" id="kalorienziel" min="0" step="1">
+            </div>
+            <div id="kalorienzielAnzeige">Tägliches Kalorienziel: </div>
+            <div id="verbleibendeKalorien">Verbleibende Kalorien:</div>            
+        </div>
+
+        <div class="function-card">
+            <h2>Proteinziel-Tracking</h2>
+            <div id="proteinezielDiv">
+                <label for="proteineziel">Tägliches Proteinziel:</label>
+                <input type="number" id="proteineziel" min="0" step="1">
+            </div>
+            <div id="proteinezielAnzeige">Tägliches Proteinziel: </div>
+            <div id="verbleibendeProteine">Verbleibende Proteine:</div>
+        </div>
+
+        <div class="function-card">
+            <h2>Fettziel-Tracking</h2>
+            <div id="fettzielDiv">
+                <label for="fettziel">Tägliches Fettziel:</label>
+                <input type="number" id="fettziel" min="0" step="1">
+            </div>
+            <div id="fettzielAnzeige">Tägliches Fettziel: </div>
+            <div id="verbleibendeFette">Verbleibende Fette:</div>
+        </div>
+    </div>
+    <!--neue Zeile-->
+    <div class="function-cards-container">
+        <!--Lebensmittel hinzufügen und berechnen-->
+        <div class="function-card">
+            <h2>Lebensmittel hinzufügen und berechnen</h2>
+            <label for="lebensmittel">Wähle ein Lebensmittel:</label>
+            <select id="lebensmittel">
+                <option value="apfel">Apfel</option>
+                <option value="banane">Banane</option>
+                <option value="hühnchen">Hühnchen</option>
+                <option value="spinat">Spinat</option>
+                <option value="lachs">Lachs</option>
+                <option value="vollkornbrot">Vollkornbrot</option>
+                <option value="erdnüsse">Erdnüsse</option>
+                <option value="joghurt">Joghurt</option>
+                <option value="karotten">Karotten</option>
+                <option value="quinoa">Quinoa</option>
+                <option value="avocado">Avocado</option>
+                <option value="haferflocken">Haferflocken</option>
+                <option value="brokkoli">Brokkoli</option>
+                <option value="tomate">Tomate</option>
+                <option value="kartoffel">Kartoffel</option>
+                <option value="thunfisch">Thunfisch</option>
+                <option value="möhren">Möhren</option>
+                <option value="paprika">Paprika</option>
+                <option value="zucchini">Zucchini</option>
+                <option value="linsen">Linsen</option>
+            </select>                   
+            <br>
+            <label for="anzahl">Menge in Gramm:</label>
+            <input type="number" id="anzahl" min="0" step="1">
+            <br>
+            <button id="berechnenBtn">Werte berechnen</button>
+        </div>
+        <!--Tabelle mit berechneten Werten-->
+        <div class="function-card">
+            <h2>Berechnete Werte</h2>
+            <table id="berechneteTabelle">
+                <thead>
+                    <tr>
+                        <th>Lebensmittel</th>
+                        <th>Menge (g)</th>
+                        <th>Kalorien</th>
+                        <th>Proteine (g)</th>
+                        <th>Fette (g)</th>
+                    </tr>
+                </thead>
+                <tbody id="berechneteTabelleBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <!--neue Zeile-->
+    <div class="function-cards-container">
+        <!--Benutzerdefiniertes Lebensmittel hinzufügen-->
+        <div class="function-card">
+            <h2>Benutzerdefiniertes Lebensmittel speichern</h2>
+            <label for="benutzerZutat">Lebensmittel:</label>
+            <input type="text" id="benutzerZutat">
+            <label for="benutzerKalorien">Kalorien pro 100g:</label>
+            <input type="number" id="benutzerKalorien" min="0" step="0.01">
+            <label for="benutzerProteine">Proteine pro 100g:</label>
+            <input type="number" id="benutzerProteine" min="0" step="0.01">
+            <label for="benutzerFett">Fett pro 100g:</label>
+            <input type="number" id="benutzerFett" min="0" step="0.01"><br>
+            <button id="benutzerZutatSpeichernBtn">Lebensmittel speichern</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
